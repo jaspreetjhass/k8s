@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: eureka-deployment
+    tier: micro-ecosystem
+    ecosystem: discovery-server
+  name: eureka-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eureka-pod
+    strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: eureka-pod
+    spec:
+      containers:
+      - image: jaspreetjhass91/eureka-server
+        name: eureka-server
+        env:
+          - name: EUREKA_SERVER_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: micro-map
+                key: EUREKA_SERVER_PORT
+        resources: {}
+status: {}
