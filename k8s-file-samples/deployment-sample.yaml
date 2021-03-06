@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-name
+  labels:
+    name: deployment-name
+  namespace: namespace-name
+spec:
+  replicas: 3
+  template:
+    metadata: 
+      name: pod-name
+      labels:
+        name: pod-name
+    spec:
+      containers:
+        - name:
+          image:
+          env:
+            - name:
+              value: 
+          ports:
+            - containerPort:
+          command: []
+          args: []  
+          volumeMounts:
+            - name:
+              mountPath:   
+      volumes:
+        name:
+        hostPath:
+          path:
+          type: 
+  selector:
+    matchLabels:
+      name: pod-name        
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-name
+  labels:
+    name: deployment-name
+  namespace: namespace-name
+spec:
+  replicas: 3
+  template:
+    metadata: 
+      name: pod-name
+      labels:
+        name: pod-name
+    spec:
+      containers:
+        - name:
+          image:
+          env:
+            - name:
+              value: 
+          ports:
+            - containerPort:
+          command: []
+          args: []  
+          volumeMounts:
+            - name:
+              mountPath:   
+      volumes:
+        name:
+        persistentVolumeClaim:
+          claimName:  
+  selector:
+    matchLabels:
+      name: pod-name
