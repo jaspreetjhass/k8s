@@ -8,3 +8,4 @@ spec:
   resources:
     requests:
       storage: 600 Gi
+  persistentVolumeReclaimPolicy: Retain|Delete|Recycle
